@@ -1,36 +1,41 @@
 requirejs.config({
-	baseUrl : 'js/vendor',
+	baseUrl : 'js',
 	paths : {
-		jquery : 'jquery/jquery',
-		underscore : 'underscore/underscore',
-		backbone : 'backbone/backbone',
-		bootstrap : 'twitter/bootstrap',
-//		text: '../libs/require/text',
-//		templates: '../templates'
+		jquery : 'vendor/jquery/jquery',
+		underscore : 'vendor/underscore/underscore',
+		backbone : 'vendor/backbone/backbone',
+		bootstrap : 'vendor/twitter/bootstrap',
+		marionette: 'vendor/backbone/backbone.marionette',
+		text: 'vendor/require/text',
+		templates: 'templates'
 		//sinon : '../libs/sinon/sinon'
 	},
 
 	shim : {
-		'jquery': {
+		jquery: {
 			exports: '$'
 		},
-		'underscore': {
+		underscore: {
 			exports: '_'
 		},
-		'backbone': {
+		backbone: {
 			deps: ['underscore', 'jquery'],
 			exports: 'Backbone'
 		},
-		'bootstrap': {
+		bootstrap: {
 			deps: ['jquery'],
 			exports: 'bootstrap'
+		},
+		marionette: {
+			deps: ['backbone'],
+			exports: 'Marionette'
 		}
 	}
 
 });
 
-require([ 'jquery', 'underscore', 'backbone' ], function($, _, Backbone) {
-	console.log("jQuery version: ", $.fn.jquery);
-	console.log("underscore identity call: ", _.identity(5));
-	console.log("Backbone.history: ", Backbone.history);
+require([ 'app' ], function(TripManager) {
+	TripManager.start();
 });
+
+
