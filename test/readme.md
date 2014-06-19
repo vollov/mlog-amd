@@ -1,5 +1,4 @@
 #Jesmine
 
-To run test
-$cd jasmine
+To run test in test folder
 $testem

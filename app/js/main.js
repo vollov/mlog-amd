@@ -4,6 +4,7 @@ requirejs.config({
 		jquery : 'vendor/jquery/jquery',
 		underscore : 'vendor/underscore/underscore',
 		backbone : 'vendor/backbone/backbone',
+		localstorage: "vendor/backbone.localStorage/backbone.localStorage",
 		bootstrap : 'vendor/twitter/bootstrap',
 		marionette: 'vendor/backbone/backbone.marionette',
 		text: 'vendor/require/text',
@@ -21,6 +22,10 @@ requirejs.config({
 		backbone: {
 			deps: ['underscore', 'jquery'],
 			exports: 'Backbone'
+		},
+		localstorage: {
+			deps: ["backbone"],
+			exports: 'localstorage'
 		},
 		bootstrap: {
 			deps: ['jquery'],

@@ -1,5 +1,5 @@
 framework: jasmine
-test_page: index.html
+test_page: test/index.html
 
 launch_in_dev:
 	- Chrome

@@ -1,5 +1,5 @@
 requirejs.config({
-	baseUrl : '../../app/js',
+	baseUrl : '../app/js',
 	paths : {
 		jquery : 'vendor/jquery/jquery',
 		underscore : 'vendor/underscore/underscore',
@@ -10,7 +10,7 @@ requirejs.config({
 		templates: 'templates',
 		jasmine: '../../test/lib/jasmine/jasmine',
 		'jasmine-html': '../../test/lib/jasmine/jasmine-html',
-		spec: '../../test/jasmine/specs/'
+		spec: '../../test/specs/'
 		//sinon : '../libs/sinon/sinon'
 	},
 
@@ -55,7 +55,7 @@ require([ 'underscore', 'jquery', 'jasmine-html' ], function(_, $, jasmine) {
 		return htmlReporter.specFilter(spec);
 	};
 
-	specs.push("../../test/jasmine/specs/app_spec");
+	specs.push("../../test/specs/app_spec");
 	
 	$(function() {
 		require(specs, function() {
