@@ -10,8 +10,8 @@ TAD-2 initialize application with Marionette.
 TAD-3 add test driver.
 
 ##sprint 3 v0.0.3
-TAD-4 create a memory model (Trip) and test it
-TAD-5 create a memory collection and test it.
+TAD-4 create a memory model (Trip) and test it.
+TAD-5 create a trip item view and test it.
 TAD-6 create a item view and test it.
 TAD-5 create a collection view and test it.
 

@@ -1,4 +1,7 @@
-define(["marionette" ], function(Marionette) {
+define(["underscore", "marionette",
+        "text!templates/trip_list_item.html",
+        "text!templates/trip_list.html"], function(_, Marionette, tplTripListItem,
+        		tplTripList) {
 	var TripManager = new Marionette.Application();
 
 	TripManager.addRegions({
@@ -21,13 +24,13 @@ define(["marionette" ], function(Marionette) {
 
 	TripManager.TripItemView = Marionette.ItemView.extend({
 		tagName: "tr",
-		template : "#trip-list-item"
+		template : _.template(tplTripListItem)
 	});
 
 	TripManager.TripsView = Marionette.CompositeView.extend({
 		tagName: 'table',
 		className: 'table table-hover',
-		template: '#trip-list',
+		template: _.template(tplTripList),
 		itemView: TripManager.TripItemView,
 		itemViewContainer: 'tbody'
 	});
