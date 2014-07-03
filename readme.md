@@ -12,8 +12,8 @@ TAD-3 add test driver.
 ##sprint 3 v0.0.3
 TAD-4 create a memory model (Trip) and test it.
 TAD-5 create a trip item view and test it.
-TAD-6 create a item view and test it.
-TAD-5 create a collection view and test it.
+TAD-6 test trip item set-> save() event.
+TAD-7 create a collection view and test it.
 
 
 

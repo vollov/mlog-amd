@@ -24,7 +24,15 @@ define(["underscore", "marionette",
 
 	TripManager.TripItemView = Marionette.ItemView.extend({
 		tagName: "tr",
-		template : _.template(tplTripListItem)
+		template : _.template(tplTripListItem),
+		
+		events : {
+			'click button.js-delete': 'deleteClicked'
+		},
+		
+		deleteClicked: function(e){
+			console.log('delete clicked');
+		},
 	});
 
 	TripManager.TripsView = Marionette.CompositeView.extend({
@@ -38,19 +46,20 @@ define(["underscore", "marionette",
 	TripManager.on("initialize:after", function() {
 		console.log('Trip Manager has started');
 		
-		var trips = new TripManager.TripCollection([ {
-			description : 'Home to Toronto',
-			startMileage : 189553,
-			endMileage : 189664,
-		}, {
-			description : 'Toronto to home',
-			startMileage : 189664,
-			endMileage : 189775
-		}, {
-			description : 'Toronto to nthome',
-			startMileage : 189775,
-			endMileage : 189790
-		} ]);
+		var trips = new TripManager.TripCollection([]);
+//		var trips = new TripManager.TripCollection([ {
+//			description : 'Home to Toronto',
+//			startMileage : 189553,
+//			endMileage : 189664,
+//		}, {
+//			description : 'Toronto to home',
+//			startMileage : 189664,
+//			endMileage : 189775
+//		}, {
+//			description : 'Toronto to nthome',
+//			startMileage : 189775,
+//			endMileage : 189790
+//		} ]);
 		
 		var tripsListView = new TripManager.TripsView({
 			collection: trips
